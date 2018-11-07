@@ -8,7 +8,7 @@ import './index.css';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
-import reducers from './store/reducers';
+import { default as reducers } from './store/reducers';
 
 /*eslint-disable */
 const composeEnhancers =
