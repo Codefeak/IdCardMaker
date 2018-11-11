@@ -1,11 +1,10 @@
-// @flow
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
 import { Provider } from 'react-redux';
 import { HashRouter as Router } from 'react-router-dom';
 import { reducer as reduxForm } from 'redux-form';
-import type { Store as ReduxStore } from 'redux';
 
 
 import './index.css';
@@ -13,9 +12,9 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-type Store = ReduxStore< State, Action >;
+
 /*eslint-disable */
-    const store:Store = createStore(reduxForm, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+    const store = createStore(reduxForm, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 /* eslint-enable */
 ReactDOM.render(
   <Provider store={store}>

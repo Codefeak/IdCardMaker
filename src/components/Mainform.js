@@ -45,12 +45,19 @@ const RenderMainform = (props:Props) => {
       name: 'gender',
       label: 'Gender',
       type: 'radio',
-      gender: ['male', 'female'],
+      gender: ['M', 'F'],
     },
+    {
+      name: 'avatar',
+      label: 'Avatar',
+      type: 'file',
+      accept: 'image/png, image/jpg',
+    }
   ];
 
   return (
     <form onSubmit={handleSubmit}>
+    <h1 className="center-align light-text"> ID Card Maker</h1>
       {FieldArray.map(
         (field) => {
           switch (field.name) {
@@ -72,23 +79,9 @@ const RenderMainform = (props:Props) => {
                 {...props}/>;
           }
         },
-        // field.name === 'gender'
-        //   ? (<Field
-        //   name={field.name}
-        //   label={field.label}
-        //   component={renderSelectList}
-        //   gender={field.gender}
-        //   type={field.type}
-        //   key = {field.name}/>)
-        //   : (<Field
-        //   key = {field.name}
-        //   name={field.name}
-        //   label={field.label}
-        //   component={formField}
-        //   type={field.type}
-        //   {...props}/>)
+        
       )}
-      <button type="button">
+      <button type="button" onSubmit={() => {}}>
         Submit
       </button>
     </form>

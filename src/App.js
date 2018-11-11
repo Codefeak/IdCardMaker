@@ -1,11 +1,8 @@
-import React, { Component } from 'react';
+// @flow
+import React from 'react';
 import './App.css';
-import MainForm from './containers/mainform';
+import DisplayGrid from './containers/DisplayGrid';
 
-class App extends Component {
-  render() {
-    return <div className="App"> <MainForm/></div>;
-  }
-}
+const App = () => (<div className="App"> <DisplayGrid/></div>);
 
 export default App;

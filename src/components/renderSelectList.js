@@ -13,8 +13,8 @@ type Props = FieldProps & {
 const renderSelectList = ({
   gender, style, label, type, key,
 }:Props) => (
-  <div className="" key={key}>
-    <span>{label}</span>
+  <div className="margin" key={key}>
+    <p className="light-text">{label}</p>
     {gender !== undefined
       && gender.map(item => (
         <label htmlFor= {item} key={item}>

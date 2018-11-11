@@ -4,29 +4,28 @@ import { connect } from 'react-redux';
 
 import RenderMainForm from '../components/Mainform';
 
-type Func = {
-  connect: ()=>mixed,
-}
 type State = {
-  firstName: string,
-  lastName: string,
-  dob: Date,
-  ssN: mixed,
-  doi:Date,
-  doe:Date,
-  gender:string[],
+  FirstName: string,
+  LastName: string,
+  DateofBirth: Date,
+  SocialSecurityNumber: mixed,
+  DateofIssue:Date,
+  DateofExpiry:Date,
+  Gender:string[],
 }
 type Props ={
   data: { }
 };
+
 const Mainform = (props:Props) => (
   <React.Fragment>
-    <RenderMainForm {...props} />
+  {console.log(props)}
+    <RenderMainForm {...props} Submit ={() => {}}/>
   </React.Fragment>
 );
 
 const mapStateToProps = (state:State) => ({
-  data: state,
+  data: state.data,
 });
 
 export default connect(mapStateToProps)(Mainform);
