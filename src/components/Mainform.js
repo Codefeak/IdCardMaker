@@ -81,7 +81,7 @@ const RenderMainform = (props:Props) => {
         },
         
       )}
-      <button type="button" onSubmit={() => {}}>
+      <button type="submit" onSubmit={() => {}}>
         Submit
       </button>
     </form>
