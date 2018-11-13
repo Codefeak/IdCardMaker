@@ -1,6 +1,7 @@
 // @flow
 import React from 'react';
 import { connect } from 'react-redux';
+import { getFormValues } from 'redux-form';
 
 import RenderMainForm from '../components/Mainform';
 
@@ -14,8 +15,7 @@ type State = {
   Gender: string[],
   data: {},
 };
-type Props = {
-};
+type Props = {};
 
 const Mainform = (props: Props) => (
   <React.Fragment>
@@ -24,7 +24,7 @@ const Mainform = (props: Props) => (
 );
 
 const mapStateToProps = (state: State) => ({
-  data: state.data,
+  data: getFormValues('mainform')(state),
 });
 
 export default connect(mapStateToProps)(Mainform);

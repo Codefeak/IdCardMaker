@@ -6,60 +6,16 @@ import type { FormProps } from 'redux-form/lib/types';
 import renderSelectList from './renderSelectList';
 import formField from './renderField';
 import renderAvatar from './renderAvatar';
+import { default as data } from '../data';
 
 type Props = FormProps;
 
 const RenderMainform = (props: Props) => {
   const { handleSubmit, reset } = props;
-  const FieldArray = [
-    {
-      name: 'firstName',
-      label: 'First Name',
-      type: 'text',
-    },
-    {
-      name: 'lastName',
-      label: 'Last Name',
-      type: 'text',
-    },
-    {
-      name: 'dob',
-      label: 'Date of Birth',
-      type: 'date',
-    },
-    {
-      name: 'sSN',
-      label: 'Social Security Number',
-      type: 'text',
-    },
-    {
-      name: 'doi',
-      label: 'Date of Issue',
-      type: 'date',
-    },
-    {
-      name: 'doe',
-      label: 'Date of Expiry',
-      type: 'date',
-    },
-    {
-      name: 'gender',
-      label: 'Gender',
-      type: 'radio',
-      gender: ['Male', 'Female', 'InterSex'],
-    },
-    {
-      name: 'avatar',
-      label: 'Avatar',
-      type: 'file',
-    },
-  ];
-
-  let file;
   return (
     <form onSubmit={handleSubmit}>
       <h1 className="center-align light-text"> ID Card Maker</h1>
-      {FieldArray.map((field) => {
+      {data.map((field) => {
         switch (field.name) {
           case 'gender':
             return (
@@ -78,9 +34,7 @@ const RenderMainform = (props: Props) => {
                 label={field.label}
                 component={renderAvatar}
                 type={field.type}
-                key={field.name}
-                onChange={e => (file = e.target.files[0])}
-                file1={file} />
+                key={field.name}/>
             );
 
           default:

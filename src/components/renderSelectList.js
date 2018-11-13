@@ -11,16 +11,19 @@ type Props = FieldProps & {
   key:string,
 }
 const renderSelectList = ({
-  gender, style, label, type, key,
+  gender, label, type, key,
 }:Props) => (
   <div className="margin" key={key}>
     <p className="light-text">{label}</p>
     {gender !== undefined
       && gender.map(item => (
-        <label htmlFor= {item} key={item}>
-        <Field id ={item} name ="gender" component = "input" type={type} value={item}/>
-        {item}
+        <React.Fragment key={item}>
+        <label htmlFor={item} >
+          <Field id={item} name="gender" component ="input" type={type} value={item} />
+          {item}
         </label>
+
+        </React.Fragment>
       ))}
   </div>
 );

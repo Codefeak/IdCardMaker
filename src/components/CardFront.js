@@ -1,37 +1,42 @@
 import React, { Component } from 'react';
 
 class CardFront extends Component {
+  static defaultProps = {
+    data: {},
+    fields: {},
+  };
+
   render() {
-    const { data } = this.props;
+    const { data, values } = this.props;
     return (
-      data !== undefined && (
-        <div className="card bgImg">
-          <React.Fragment>
-            <div className="card-content col left ">
-              <span className="item0 center-align large-text bold600">Identity Card</span>
-              {Object.keys(data.registeredFields).map((item, i) => (item !== 'dob' && item !== 'sSN' && item !== 'avatar' ? (
-                <p className={`item${i + 1} flex margin`} key={item}>
-                  <span className="bold600">{item.toUpperCase()}</span>
-                  <span className="flex-grow1 right-align lightbg">
-                    {data.values !== undefined && data.values[item]}
-                  </span>
+      <div className="card bgImg">
+        <React.Fragment>
+          <div className="card-content col left ">
+            <span className="item0 center-align large-text bold600">Identity Card</span>
+            {/* {data.map((fields,i) => (
+              <p className={`item${i + 1} flex margin`} key={fields.name}>
+                <span className="bold600">{fields.name.toUpperCase()}</span>
+                <span className="flex-grow1 right-align lightbg"></span>
+              </p>
+            ))} */}
+            {data.map((fields, i) => (fields.name !== 'dob' && fields.name !== 'sSN' && fields.name !== 'avatar' ? (
+              <p className={`item${i + 1} flex margin`} key={fields.name}>
+                <span className="bold600">{fields.name.toUpperCase()}</span>
+                <span className="flex-grow1 right-align lightbg">{values !== undefined && values[fields.name]}</span>
+              </p>
+            ) : fields.name !== 'avatar' ? (
+              <div className={`item${i + 1} grid threeGrid`} key={fields.name}>
+                <p className="grid-col-span2 flex margin">
+                  <span className="bold600">{fields.name.toUpperCase()}</span>
+                  <span className="flex-grow1 right-align lightbg">{values !== undefined && values[fields.name]}</span>
                 </p>
-              ) : item !== 'avatar' ? (
-                <div className={`item${i + 1} grid threeGrid`}key={item}>
-                  <p className="grid-col-span2 flex margin">
-                    <span className="bold600">{item.toUpperCase()}</span>
-                    <span className="flex-grow1 right-align lightbg">
-                      {data.values !== undefined && data.values[item]}
-                    </span>
-                  </p>
-                </div>
-              ) : (
-                <div className="item8 photoholder" key={item}/>
-              )))}
-            </div>
-          </React.Fragment>
-        </div>
-      )
+              </div>
+            ) : (
+              <div className="item8 photoholder" key={fields.name} />
+            )))}
+          </div>
+        </React.Fragment>
+      </div>
     );
   }
 }
