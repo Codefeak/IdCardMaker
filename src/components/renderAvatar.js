@@ -7,9 +7,11 @@ type Props = {
   label: string,
   style: {},
   key: string,
+  file:{},
 };
-const FormField = ({
-  input: { value: originalVal, ...input } = { value: '' },
+const renderAvatar = ({
+  file,
+  input: { value: originalVal, ...input } = { value: file },
   type,
   label,
   style,
@@ -21,11 +23,11 @@ const FormField = ({
       <label className="light-text" htmlFor={name}>
         {label}
         <p className="flex">
-          <input {...input} type={type} name={name} id={name}/>
+          <input {...input} value={file} type={type} name={name} id={name} />
         </p>
       </label>
     </div>
   );
 };
 
-export default FormField;
+export default renderAvatar;

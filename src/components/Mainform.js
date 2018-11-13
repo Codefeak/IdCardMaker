@@ -5,11 +5,12 @@ import type { FormProps } from 'redux-form/lib/types';
 
 import renderSelectList from './renderSelectList';
 import formField from './renderField';
+import renderAvatar from './renderAvatar';
 
 type Props = FormProps;
 
-const RenderMainform = (props:Props) => {
-  const { handleSubmit } = props;
+const RenderMainform = (props: Props) => {
+  const { handleSubmit, reset } = props;
   const FieldArray = [
     {
       name: 'firstName',
@@ -51,38 +52,51 @@ const RenderMainform = (props:Props) => {
       name: 'avatar',
       label: 'Avatar',
       type: 'file',
-      accept: 'image/png, image/jpg',
-    }
+    },
   ];
 
+  let file;
   return (
     <form onSubmit={handleSubmit}>
-    <h1 className="center-align light-text"> ID Card Maker</h1>
-      {FieldArray.map(
-        (field) => {
-          switch (field.name) {
-            case 'gender':
-              return <Field
+      <h1 className="center-align light-text"> ID Card Maker</h1>
+      {FieldArray.map((field) => {
+        switch (field.name) {
+          case 'gender':
+            return (
+              <Field
                 name={field.name}
                 label={field.label}
                 component={renderSelectList}
                 gender={field.gender}
                 type={field.type}
-                key={field.name}/>;
-            default:
-              return <Field
+                key={field.name} />
+            );
+          case 'avatar':
+            return (
+              <Field
+                name={field.name}
+                label={field.label}
+                component={renderAvatar}
+                type={field.type}
+                key={field.name}
+                onChange={e => (file = e.target.files[0])}
+                file1={file} />
+            );
+
+          default:
+            return (
+              <Field
                 key={field.name}
                 name={field.name}
                 label={field.label}
                 component={formField}
                 type={field.type}
-                {...props}/>;
-          }
-        },
-        
-      )}
-      <button type="submit" onSubmit={() => {}}>
-        Submit
+                {...props} />
+            );
+        }
+      })}
+      <button className="button" onClick={reset}>
+        Clear Form
       </button>
     </form>
   );

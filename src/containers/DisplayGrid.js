@@ -1,22 +1,26 @@
-import React from 'react';
+import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import CardFront from '../components/CardFront';
-import CardBack from '../components/CardBack';
+
+import Preview from './preview';
 import MainForm from './mainform';
 
-
-const DisplayGrid = props => (
-  <div className="grid twoGrid center-align">
-    <React.Fragment>
-      <MainForm />
-    </React.Fragment>
-    <div>
-      <CardFront {...props} />
-      <CardBack />
-      <p>Preview</p>
-    </div>
-  </div>
-);
+class DisplayGrid extends Component {
+  render() {
+    return (
+      <React.Fragment>
+        <h1 className="center-align main-heading">ID Card Maker</h1>
+      <div className="grid twoGrid gridGap center-align">
+        <React.Fragment>
+          <MainForm onSubmit={() => {}} />
+        </React.Fragment>
+        <div>
+          <Preview {...this.props}/>
+        </div>
+      </div>
+      </React.Fragment>
+    );
+  }
+}
 
 const mapStateToProps = state => ({ data: state.mainform });
 

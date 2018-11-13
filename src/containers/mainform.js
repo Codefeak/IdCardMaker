@@ -9,22 +9,21 @@ type State = {
   LastName: string,
   DateofBirth: Date,
   SocialSecurityNumber: mixed,
-  DateofIssue:Date,
-  DateofExpiry:Date,
-  Gender:string[],
-}
-type Props ={
-  data: { }
+  DateofIssue: Date,
+  DateofExpiry: Date,
+  Gender: string[],
+  data: {},
+};
+type Props = {
 };
 
-const Mainform = (props:Props) => (
+const Mainform = (props: Props) => (
   <React.Fragment>
-  {console.log(props)}
-    <RenderMainForm {...props} Submit ={() => {}}/>
+    <RenderMainForm {...props} handleSubmit={() => {}} />
   </React.Fragment>
 );
 
-const mapStateToProps = (state:State) => ({
+const mapStateToProps = (state: State) => ({
   data: state.data,
 });
 

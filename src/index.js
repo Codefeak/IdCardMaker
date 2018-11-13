@@ -1,4 +1,3 @@
-
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { createStore } from 'redux';
@@ -6,20 +5,21 @@ import { Provider } from 'react-redux';
 import { HashRouter as Router } from 'react-router-dom';
 import { reducer as reduxForm } from 'redux-form';
 
-
 import './index.css';
 
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
-
 /*eslint-disable */
-    const store = createStore(reduxForm, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(
+  reduxForm,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
 /* eslint-enable */
 ReactDOM.render(
   <Provider store={store}>
     <Router>
-    <App />
+      <App />
     </Router>
   </Provider>,
   document.getElementById('root'),
