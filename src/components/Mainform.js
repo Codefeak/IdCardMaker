@@ -46,7 +46,7 @@ const RenderMainform = (props: Props) => {
       name: 'gender',
       label: 'Gender',
       type: 'radio',
-      gender: ['M', 'F'],
+      gender: ['Male', 'Female', 'InterSex'],
     },
     {
       name: 'avatar',
