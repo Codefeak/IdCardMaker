@@ -14,6 +14,7 @@ const FormField = ({
   label,
   style,
   key,
+  meta: { error },
 }: Props) => {
   const { name } = input;
   return (
@@ -24,6 +25,7 @@ const FormField = ({
           <input {...input} type={type} name={name} id={name}/>
         </p>
       </label>
+      {/* <span>{error && console.log(error)}</span> */}
     </div>
   );
 };

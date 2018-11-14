@@ -12,7 +12,7 @@ class Preview extends Component {
         <ReactToPrint
           trigger={() => <p className="button">Print Front Part</p>}
           content={() => this.componentRef} />
-        <CardBack ref={el => (this.componentRef1 = el)} />
+        <CardBack {...this.props} ref={el => (this.componentRef1 = el)} />
         <ReactToPrint
           trigger={() => <p className="button">Print Back Part</p>}
           content={() => this.componentRef1} />

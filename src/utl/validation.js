@@ -1,8 +1,5 @@
 export const validate = (values) => {
   const errors = {};
-  if (!values.firstName) {
-    errors.firstName = 'this field is required';
-  }
 
   return errors;
 };

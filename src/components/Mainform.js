@@ -7,6 +7,7 @@ import renderSelectList from './renderSelectList';
 import formField from './renderField';
 import renderAvatar from './renderAvatar';
 import { default as data } from '../data';
+// import { validate } from '../utl/validation';
 
 type Props = FormProps;
 
@@ -34,7 +35,8 @@ const RenderMainform = (props: Props) => {
                 label={field.label}
                 component={renderAvatar}
                 type={field.type}
-                key={field.name}/>
+                key={field.name}
+                {...props} />
             );
 
           default:

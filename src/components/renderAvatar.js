@@ -1,33 +1,34 @@
 // @flow
-import React from 'react';
+import React, { Component } from 'react';
 
 type Props = {
   input: { value: {}, name: string },
   type: string,
   label: string,
-  style: {},
-  key: string,
-  file:{},
+  handleFile: ()=>mixed,
 };
-const renderAvatar = ({
-  file,
-  input: { value: originalVal, ...input } = { value: file },
-  type,
-  label,
-  style,
-  key,
-}: Props) => {
-  const { name } = input;
-  return (
-    <div className="margin bold600" style={style} key={key}>
-      <label className="light-text" htmlFor={name}>
-        {label}
-        <p className="flex">
-          <input {...input} value={file} type={type} name={name} id={name} />
-        </p>
-      </label>
-    </div>
-  );
+type State = {
+  file: string,
 };
+class renderAvatar extends Component<Props, State> {
+  render() {
+    const {
+      input: { name },
+      label,
+      type,
+      handleFile,
+    } = this.props;
+    return (
+      <div className="margin bold600" key={name}>
+        <label className="light-text" htmlFor={name}>
+          {label}
+          <p className="flex">
+            <input type={type} name={name} id={name} onChange={handleFile} />
+          </p>
+        </label>
+      </div>
+    );
+  }
+}
 
 export default renderAvatar;
