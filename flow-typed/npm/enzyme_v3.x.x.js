@@ -1,9 +1,9 @@
 // flow-typed signature: 741a238d71e60f17f794be252b94a324
 // flow-typed version: ff97018d54/enzyme_v3.x.x/flow_>=v0.53.x
 
-import * as React from "react";
+import * as React from 'react';
 
-declare module "enzyme" {
+declare module 'enzyme' {
   declare type PredicateFunction<T: Wrapper> = (
     wrapper: T,
     index: number

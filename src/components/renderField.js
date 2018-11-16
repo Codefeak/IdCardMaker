@@ -22,7 +22,7 @@ const FormField = ({
       <label className="light-text" htmlFor={name}>
         {label}
         <p className="flex">
-          <input {...input} type={type} name={name} id={name}/>
+          <input {...input} type={type} name={name} id={name} />
         </p>
       </label>
       {/* <span>{error && console.log(error)}</span> */}

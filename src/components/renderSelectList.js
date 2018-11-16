@@ -18,10 +18,10 @@ const renderSelectList = ({
     {gender !== undefined
       && gender.map(item => (
         <React.Fragment key={item}>
-        <label htmlFor={item} >
-          <Field id={item} name="gender" component ="input" type={type} value={item} />
-          {item}
-        </label>
+          <label htmlFor={item}>
+            <Field id={item} name="gender" component="input" type={type} value={item} />
+            {item}
+          </label>
 
         </React.Fragment>
       ))}

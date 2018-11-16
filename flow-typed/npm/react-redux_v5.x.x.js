@@ -1,7 +1,7 @@
 // flow-typed signature: 502cfd4f5e95c6308f747cdf16dc93ce
 // flow-typed version: 1751d5bf0a/react-redux_v5.x.x/flow_>=v0.68.0
 
-declare module "react-redux" {
+declare module 'react-redux' {
   import type { ComponentType, ElementConfig } from 'react';
 
   // These types are copied directly from the redux libdef. Importing them in
