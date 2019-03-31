@@ -5,12 +5,10 @@ import bgImg from "../../img/ID_bg_chip.jpg";
 export const CardBackWrapper = styled(Card)`
   display: grid;
   text-align: center;
-  grid-template-rows: 1fr 1fr 5fr;
   justify-items: center;
   background-image: ${props => props.img || `url(${bgImg})`};
   background-repeat: no-repeat;
   background-size: 100%;
-  // background-position-y: 12em;
   background-color: #dae3fa96;
   background-blend-mode: luminosity;
 `;
