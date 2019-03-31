@@ -6,6 +6,11 @@ export const Div = styled.div`
 `;
 
 export const LabelP = styled(P)`
+  margin-top: 0px;
   color: #84837c;
   font-weight: 600;
+`;
+
+export const LabelSelect = styled.label`
+  margin: 10px;
 `;

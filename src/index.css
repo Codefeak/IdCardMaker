@@ -13,14 +13,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
-input {
-  background: transparent;
-  border: none;
-  border-bottom: 1px solid darkkhaki;
-  flex-grow: 2;
-  font-size: 1.3em;
-  color: #611103;
-}
 input[type="date"]::-webkit-inner-spin-button,
 input[type="date"]::-webkit-outer-spin-button {
   -webkit-appearance: none;

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import bgImg from "../../img/ID_back_chip.jpg";
-import {Card} from '../DisplayGrid';
+import { Card } from "../DisplayGrid";
 
 export const CardFrontWrapper = styled(Card)`
   background-image: ${props => props.img || `url(${bgImg})`};
@@ -16,7 +16,7 @@ export const Content = styled.div`
   flex-direction: column;
 `;
 
-export const CardTitle = styled.p`
+export const CardTitle = styled.span`
   text-align: center;
   justify-items: center;
   font-size: 1.5em;
@@ -38,6 +38,7 @@ grid-template-columns: 1fr 1fr 1fr;
 `;
 
 export const FieldName = styled.span`
+  min-width: ${props => props.width || "100px"};
   font-weight: 600;
 `;
 export const FieldValue = styled.span`

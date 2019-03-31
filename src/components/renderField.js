@@ -1,6 +1,6 @@
 // @flow
 import React from "react";
-import { RenderWrapper, Label, P } from "../Styled Components/MainForm";
+import { RenderWrapper, Label, P, Input } from "../Styled Components/MainForm";
 
 type Props = {
   input: { value: {}, name: string },
@@ -20,12 +20,10 @@ const FormField = ({
   const { name } = input;
   return (
     <RenderWrapper style={style} key={key}>
-      <Label htmlFor={name}>
-        {label}
-        <P>
-          <input {...input} type={type} name={name} id={name} />
-        </P>
-      </Label>
+      <P>
+        <Label htmlFor={name}>{label}:</Label>
+      <Input {...input} type={type} name={name} id={name} />
+      </P>
       {/* <span>{error && console.log(error)}</span> */}
     </RenderWrapper>
   );

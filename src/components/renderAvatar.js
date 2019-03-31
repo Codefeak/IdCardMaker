@@ -1,6 +1,13 @@
 // @flow
 import React, { Component } from "react";
+import styled from "styled-components";
+
 import { RenderWrapper, Label, P } from "../Styled Components/MainForm";
+
+const AvatarWrapper = styled(RenderWrapper)`
+  display: grid;
+  grid-column: ${props => props.col};
+`;
 
 type Props = {
   input: { value: {}, name: string },
@@ -17,17 +24,27 @@ class renderAvatar extends Component<Props, State> {
       input: { name },
       label,
       type,
+      col,
       handleFile
     } = this.props;
-    return (
-      <RenderWrapper key={name}>
+    return name === "avatar" ? (
+      <AvatarWrapper key={name} col="2">
         <Label htmlFor={name}>
-          {label}
+          {label}:
           <P>
             <input type={type} name={name} id={name} onChange={handleFile} />
           </P>
         </Label>
-      </RenderWrapper>
+      </AvatarWrapper>
+    ) : (
+      <AvatarWrapper key={name} col={col}>
+        <Label htmlFor={name}>
+          {label}:
+          <P>
+            <input type={type} name={name} id={name} onChange={handleFile} />
+          </P>
+        </Label>
+      </AvatarWrapper>
     );
   }
 }
