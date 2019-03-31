@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/3.6.3/workbox-sw.js");
 
 importScripts(
-  "/IdCardMaker/precache-manifest.f61f7f81d8b83a56d877761d3ced4099.js"
+  "/IdCardMaker/precache-manifest.499cbb0e8cced10a97f1daaaeda98a9a.js"
 );
 
 workbox.clientsClaim();
