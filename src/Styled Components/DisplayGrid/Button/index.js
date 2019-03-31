@@ -5,16 +5,16 @@ export const Button = styled.button`
   max-width: 200px;
   padding: 15px 20px;
   border-radius: 15px;
-  color: lightseagreen;
+  color: black;
   background-color: transparent;
   box-sizing: none;
-  border: 1px solid lightseagreen;
+  border: 2px solid black;
   box-shadow: none;
   cursor: pointer;
   font-size: 1.2em;
   display: inline-block;
   &:hover {
-    background-color: lightseagreen;
+    background-color: black;
     color: white;
   }
 `;

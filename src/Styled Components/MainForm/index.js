@@ -3,14 +3,14 @@ import { H1 } from "../DisplayGrid";
 
 export const Form = styled.form`
   display: grid;
-  background: #ffffffa1;
+  background: #ffffffce;
   background-repeat: no-repeat;
   background-position-y: 79%;
   background-size: 100%;
   width: 90%;
   height: 800px;
   overflow-y: auto;
-  text-align: left;
+  text-align: left; 
   margin: 12px auto;
   padding: 20px;
   box-shadow: 1px 1px 4px 0px #c5bdbd;

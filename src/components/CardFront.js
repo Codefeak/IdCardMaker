@@ -27,7 +27,13 @@ class CardFront extends Component<Props> {
   render() {
     const { data, values, file } = this.props;
     return (
-      <CardFrontWrapper img="">
+      <CardFrontWrapper
+        img={
+          file.bgCardFrontUrl !== undefined
+            ? `url(${file.bgCardFrontUrl})`
+            : null
+        }
+      >
         <Content>
           {data.map((fields, i) => {
             if (fields.type === "file" && fields.name !== "avatar") {

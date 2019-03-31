@@ -10,7 +10,7 @@ export const CardBackWrapper = styled(Card)`
   background-image: ${props => props.img || `url(${bgImg})`};
   background-repeat: no-repeat;
   background-size: 100%;
-  background-position-y: 12em;
+  // background-position-y: 12em;
   background-color: #dae3fa96;
   background-blend-mode: luminosity;
 `;
