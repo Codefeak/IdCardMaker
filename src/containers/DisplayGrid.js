@@ -5,6 +5,7 @@ import { getFormValues } from 'redux-form';
 import Preview from './preview';
 import MainForm from './mainform';
 import { default as data } from '../data';
+import {H1, Section, PreviewWrapper} from '../Styled Components/DisplayGrid';
 
 class DisplayGrid extends Component {
   state = {
@@ -22,13 +23,13 @@ class DisplayGrid extends Component {
   render() {
     return (
       <React.Fragment>
-        <h1 className="center-align main-heading">ID Card Maker</h1>
-        <div className="grid twoGrid gridGap center-align">
+        <H1 >ID Card Maker</H1>
+        <Section >
           <MainForm onSubmit={() => {}} handleFile={this.handleFile} />
-          <div>
+          <PreviewWrapper>
             <Preview {...this.props} data={data} file={this.state} />
-          </div>
-        </div>
+          </PreviewWrapper>
+        </Section>
       </React.Fragment>
     );
   }

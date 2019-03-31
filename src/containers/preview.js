@@ -1,8 +1,10 @@
-import React, { Component } from 'react';
-import ReactToPrint from 'react-to-print';
+import React, { Component } from "react";
+import ReactToPrint from "react-to-print";
 
-import CardFront from '../components/CardFront';
-import CardBack from '../components/CardBack';
+import CardFront from "../components/CardFront";
+import CardBack from "../components/CardBack";
+
+import { Button } from "../Styled Components/DisplayGrid/Button";
 
 class Preview extends Component {
   render() {
@@ -10,12 +12,14 @@ class Preview extends Component {
       <React.Fragment>
         <CardFront {...this.props} ref={el => (this.componentRef = el)} />
         <ReactToPrint
-          trigger={() => <p className="button">Print Front Part</p>}
-          content={() => this.componentRef} />
+          trigger={() => <Button>Print Front Part</Button>}
+          content={() => this.componentRef}
+        />
         <CardBack {...this.props} ref={el => (this.componentRef1 = el)} />
         <ReactToPrint
-          trigger={() => <p className="button">Print Back Part</p>}
-          content={() => this.componentRef1} />
+          trigger={() => <Button>Print Back Part</Button>}
+          content={() => this.componentRef1}
+        />
       </React.Fragment>
     );
   }

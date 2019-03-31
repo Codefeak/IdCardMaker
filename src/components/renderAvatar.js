@@ -1,14 +1,15 @@
 // @flow
-import React, { Component } from 'react';
+import React, { Component } from "react";
+import { RenderWrapper, Label, P } from "../Styled Components/MainForm";
 
 type Props = {
   input: { value: {}, name: string },
   type: string,
   label: string,
-  handleFile: ()=>mixed,
+  handleFile: () => mixed
 };
 type State = {
-  file: string,
+  file: string
 };
 class renderAvatar extends Component<Props, State> {
   render() {
@@ -16,17 +17,17 @@ class renderAvatar extends Component<Props, State> {
       input: { name },
       label,
       type,
-      handleFile,
+      handleFile
     } = this.props;
     return (
-      <div className="margin bold600" key={name}>
-        <label className="light-text" htmlFor={name}>
+      <RenderWrapper key={name}>
+        <Label htmlFor={name}>
           {label}
-          <p className="flex">
+          <P>
             <input type={type} name={name} id={name} onChange={handleFile} />
-          </p>
-        </label>
-      </div>
+          </P>
+        </Label>
+      </RenderWrapper>
     );
   }
 }

@@ -1,8 +1,24 @@
 // @flow
-import React, { Component } from 'react';
+import React, { Component } from "react";
+
+import {
+  CardFrontWrapper,
+  Content,
+  CardTitle,
+  Normal,
+  FieldName,
+  FieldValue,
+  Img,
+  MiddleDiv
+} from "../Styled Components/CardFront";
 
 type Props = {
-  data: Array<{ name: string, label: string, type: string, gender?:$ReadOnlyArray<string>}>,
+  data: Array<{
+    name: string,
+    label: string,
+    type: string,
+    gender?: $ReadOnlyArray<string>
+  }>,
   values: {},
   file: { file?: {}, imagePreviewUrl: string }
 };
@@ -12,41 +28,42 @@ class CardFront extends Component<Props> {
     const { data, values, file } = this.props;
     console.log(this.props);
     return (
-      <div className="card bgImg">
-        <div className="card-content col left ">
-          <span className="item0 center-align large-text bold600">
+      <CardFrontWrapper img="">
+        <Content>
+          <CardTitle row="1" col="1/3">
             Identity Card
-          </span>
+          </CardTitle>
           {data.map((fields, i) =>
-            fields.name !== 'dob' &&
-            fields.name !== 'sSN' &&
-            fields.name !== 'avatar' ? (
-              <p className={`item${i + 1} flex margin`} key={fields.name}>
-                <span className="bold600">{fields.name.toUpperCase()}</span>
-                <span className="flex-grow1 right-align lightbg">
+            fields.name !== "dob" &&
+            fields.name !== "sSN" &&
+            fields.name !== "avatar" ? (
+              <Normal key={fields.name} row={fields.row} col={fields.col}>
+                <FieldName>{fields.name.toUpperCase()}</FieldName>
+                <FieldValue>
                   {values !== undefined && values[fields.name]}
-                </span>
-              </p>
-            ) : fields.name !== 'avatar' ? (
-              <div className={`item${i + 1} grid threeGrid`} key={fields.name}>
-                <p className="grid-col-span2 flex margin">
-                  <span className="bold600">{fields.name.toUpperCase()}</span>
-                  <span className="flex-grow1 right-align lightbg">
+                </FieldValue>
+              </Normal>
+            ) : fields.name !== "avatar" ? (
+              <MiddleDiv row={`item${i + 1}`} col="2/4" key={fields.name}>
+                <Normal row={fields.row} col={fields.col}>
+                  <FieldName>{fields.name.toUpperCase()}</FieldName>
+                  <FieldValue>
                     {values !== undefined && values[fields.name]}
-                  </span>
-                </p>
-              </div>
+                  </FieldValue>
+                </Normal>
+              </MiddleDiv>
             ) : (
-              <img
+              <Img
                 src={file.imagePreviewUrl}
                 alt="avatar"
-                className="item8 photoholder"
                 key={fields.name}
+                row={fields.row}
+                col={fields.col}
               />
             )
           )}
-        </div>
-      </div>
+        </Content>
+      </CardFrontWrapper>
     );
   }
 }

@@ -1,32 +1,33 @@
 // @flow
-import React from 'react';
+import React from "react";
+import { RenderWrapper, Label, P } from "../Styled Components/MainForm";
 
 type Props = {
   input: { value: {}, name: string },
   type: string,
   label: string,
   style: {},
-  key: string,
+  key: string
 };
 const FormField = ({
-  input: { value: originalVal, ...input } = { value: '' },
+  input: { value: originalVal, ...input } = { value: "" },
   type,
   label,
   style,
   key,
-  meta: { error },
+  meta: { error }
 }: Props) => {
   const { name } = input;
   return (
-    <div className="margin bold600" style={style} key={key}>
-      <label className="light-text" htmlFor={name}>
+    <RenderWrapper style={style} key={key}>
+      <Label htmlFor={name}>
         {label}
-        <p className="flex">
+        <P>
           <input {...input} type={type} name={name} id={name} />
-        </p>
-      </label>
+        </P>
+      </Label>
       {/* <span>{error && console.log(error)}</span> */}
-    </div>
+    </RenderWrapper>
   );
 };
 

@@ -1,12 +1,12 @@
 // @flow
-import React from 'react';
-import './App.css';
-import DisplayGrid from './containers/DisplayGrid';
+import React from "react";
+import DisplayGrid from "./containers/DisplayGrid";
+import { Wrapper } from "./Styled Components";
 
 const App = () => (
-  <div className="App">
+  <Wrapper>
     <DisplayGrid />
-  </div>
+  </Wrapper>
 );
 
 export default App;
